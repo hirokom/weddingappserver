@@ -1,0 +1,125 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.abeam.wedding</groupId>
+  <artifactId>weddingappserver</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>weddingapp Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+		<org.springframework-ver>4.1.4.RELEASE</org.springframework-ver>
+		<org.springframework.data-jpa-ver>1.7.1.RELEASE</org.springframework.data-jpa-ver>
+		<org.springframework.security-ver>3.2.5.RELEASE</org.springframework.security-ver>
+		<jackson-core-ver>2.5.0</jackson-core-ver>
+		<mysql-ver>5.1.26</mysql-ver>
+		<junit-ver>4.11</junit-ver>
+		<org.hibernate-entitymanager-ver>4.2.6.Final</org.hibernate-entitymanager-ver>
+		<org.hibernate-validator-ver>5.0.1.Final</org.hibernate-validator-ver>
+		<javax.servlet-ver>1.2</javax.servlet-ver>
+		<org.projectlombok-ver>1.12.2</org.projectlombok-ver>
+  </properties>
+
+  <dependencies>
+		<!-- Spring Framework -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${org.springframework-ver}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${org.springframework-ver}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework.data</groupId>
+		    <artifactId>spring-data-jpa</artifactId>
+		    <version>${org.springframework.data-jpa-ver}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>${org.springframework.security-ver}</version>
+		</dependency>
+
+		<!-- jackson -->
+		<dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-core</artifactId>
+        <version>${jackson-core-ver}</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-databind</artifactId>
+		    <version>${jackson-core-ver}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>${jackson-core-ver}</version>
+		</dependency>
+
+		<!-- JSTL -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>${javax.servlet-ver}</version>
+		</dependency>
+
+		<!-- Hibernate -->
+		<dependency>
+		  <groupId>org.hibernate</groupId>
+		  <artifactId>hibernate-entitymanager</artifactId>
+		  <version>${org.hibernate-entitymanager-ver}</version>
+		  <scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>${org.hibernate-validator-ver}</version>
+		</dependency>
+            
+		<!-- MySQL -->
+		<dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <version>${mysql-ver}</version>
+		</dependency>
+    
+		<!-- lombok -->
+		<dependency>
+		<groupId>org.projectlombok</groupId>
+		<artifactId>lombok</artifactId>
+		<version>${org.projectlombok-ver}</version>
+		<scope>provided</scope>
+		</dependency>
+
+		<!-- JUnit -->
+		<dependency>
+		  <groupId>junit</groupId>
+		  <artifactId>junit</artifactId>
+		  <version>${junit-ver}</version>
+		  <scope>test</scope>
+		</dependency>
+
+		<!-- Cglib -->
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib-nodep</artifactId>
+			<version>2.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.7.3</version>
+		</dependency>
+            
+  </dependencies>
+
+  <build>
+    <finalName>weddingappserver</finalName>
+  </build>
+</project>
