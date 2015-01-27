@@ -6,23 +6,23 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title><spring:message code="common.login" /></title>
+<title><spring:message code="title.login" /></title>
 </head>
 <body>
-	<h1><spring:message code="common.login" /></h1>
+	<h1><spring:message code="title.login" /></h1>
 	<form:form modelAttribute="weddingForm" method="POST">
 		<table>
 			<tr>
-				<th><spring:message code="common.login" /><br></th>
+				<th><spring:message code="item.userId" /><br></th>
 				<td><form:input path="userId" cssStyle="text-align:right;"></form:input></td>
 			</tr>
 			<tr>
-				<th><spring:message code="common.login" /><br></th>
+				<th><spring:message code="item.password" /><br></th>
 				<td><form:input path="password" cssStyle="text-align:right;" type="password"></form:input></td>
 			</tr>
 		</table>
 		<button type="submit" name="_login">
-			<spring:message code="common.login" />
+			<spring:message code="button.login" />
 		</button>
 	</form:form>
 </body>

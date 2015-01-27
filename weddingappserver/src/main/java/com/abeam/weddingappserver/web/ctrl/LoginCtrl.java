@@ -33,7 +33,7 @@ public class LoginCtrl
 	{
 		final WeddingInfo weddingInfo = loginService.getBaseInfo(form.getUserId());
 		form.setWeddingInfo(weddingInfo);
-		return "Login";
+		return "Top";
 	}
 
 }

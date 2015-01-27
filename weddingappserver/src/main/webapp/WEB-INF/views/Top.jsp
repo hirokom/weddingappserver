@@ -6,20 +6,25 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title><spring:message code="customerEdit.title" /></title>
+<title><spring:message code="title.top" /></title>
 </head>
 <body>
-	<h1><spring:message code="customerEdit-search.title" /></h1>
-	<form:form modelAttribute="customerEditForm" method="POST">
+	<h1><spring:message code="title.top" /></h1>
+	<form:form modelAttribute="weddingForm" method="POST">
 		<table>
 			<tr>
-				<th><spring:message code="customerEdit-search.customerNo" /><br></th>
-				<td><form:input path="customerNo" cssStyle="text-align:right;"></form:input></td>
+				<td>
+					<spring:bind path="weddingInfo.husband">${status.value}</spring:bind>
+					<spring:message code="common.title" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<spring:bind path="weddingInfo.wife">${status.value}</spring:bind>
+					<spring:message code="common.title" />
+				</td>
 			</tr>
 		</table>
-		<button type="submit" name="_search">
-			<spring:message code="common.search" />
-		</button>
 	</form:form>
 </body>
 </html>
