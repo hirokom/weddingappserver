@@ -11,8 +11,8 @@ public class LoginService
 	public WeddingInfo getBaseInfo(final String id)
 	{
 		final WeddingInfo weddingInfo = new WeddingInfo();
-		weddingInfo.setHusband("“nç³ Ni");
-		weddingInfo.setWife("“nç³ Nq");
+		weddingInfo.setHusband("æ¸¡é‚‰ã€€åº·å¸");
+		weddingInfo.setWife("æ¸¡é‚‰ã€€åº·å­");
 		return weddingInfo;
 	}
 }
