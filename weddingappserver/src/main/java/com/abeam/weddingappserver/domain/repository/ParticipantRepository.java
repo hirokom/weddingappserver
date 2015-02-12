@@ -13,4 +13,7 @@ public interface ParticipantRepository extends JpaRepository<Participant, ID>
 
 	public List<Participant> findByWeddingId(final String weddingId);
 
+	public List<Participant> findByWeddingIdOrderByseqNoDesc(final String weddingId);
+
+
 }
