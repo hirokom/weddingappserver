@@ -23,7 +23,7 @@ public class FoodmenuCtrl
 	@RequestMapping(value = "/foodmenu", params = "_back", method = RequestMethod.POST)
 	public String back(@ModelAttribute("weddingForm") final WeddingForm form)
 	{
-		return "menu";
+		return "Menu";
 	}
 
 }
