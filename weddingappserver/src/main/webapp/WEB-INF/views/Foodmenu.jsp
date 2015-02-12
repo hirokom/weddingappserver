@@ -19,7 +19,7 @@
 	<tr>
 	<th>前菜</th>
 	<td><spring:bind path="weddingInfo.FoodMenu.appetizer">${status.value}</spring:bind></td>
-	<td><img src="/weddingappserver/src/main/webapp/img/KOMA.jpeg"></td>
+	<td>画像①</td>
 	</tr>
 	<tr>
 	<th>スープ</th>
