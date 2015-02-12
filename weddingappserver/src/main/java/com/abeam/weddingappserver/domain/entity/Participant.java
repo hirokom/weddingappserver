@@ -17,7 +17,7 @@ public class Participant implements Serializable
 	@Id
 	private String weddingId = null;
 	@Id
-	private String seqNo = null;
+	private Integer seqNo = null;
 	private String participantName = null;
 
 }
