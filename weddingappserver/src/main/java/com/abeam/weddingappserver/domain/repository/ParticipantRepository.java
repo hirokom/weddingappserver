@@ -11,8 +11,18 @@ import com.sun.xml.internal.bind.v2.model.core.ID;
 public interface ParticipantRepository extends JpaRepository<Participant, ID>
 {
 
+	/**
+	 *
+	 * @param weddingId
+	 * @return
+	 */
 	public List<Participant> findByKeyWeddingId(final String weddingId);
 
+	/**
+	 *
+	 * @param weddingId
+	 * @return
+	 */
 	public List<Participant> findByKeyWeddingIdOrderByKeySeqNoAsc(final String weddingId);
 
 }

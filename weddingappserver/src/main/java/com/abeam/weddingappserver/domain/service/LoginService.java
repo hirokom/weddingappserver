@@ -54,6 +54,10 @@ public class LoginService
 		final FoodMenu foodMenu = foodMenuRepository.findByFoodMenuId(wedding.getFoodMenuId());
 		final List<Participant> participantList = participantRepository.findByKeyWeddingId(user.getWeddingId());
 
+		/**
+		 * Create Wedding Info
+		 *
+		 */
 		for (final Couple couple : coupleList)
 		{
 

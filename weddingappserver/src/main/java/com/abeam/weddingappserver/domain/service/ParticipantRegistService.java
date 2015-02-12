@@ -44,7 +44,7 @@ public class ParticipantRegistService
 			participant.setKey(key);
 			participant.setParticipantName(participantName);
 
-			participantRepository.save(participant);
+			participantRepository.saveAndFlush(participant);
 			//			participantRepository.saveAndFlush(participant);
 
 		}

@@ -14,6 +14,10 @@ import lombok.Setter;
 @Setter
 public class Participant implements Serializable
 {
+
+	/**
+	 * 複合キー
+	 */
 	@EmbeddedId
 	private EmbeddableParticipantKey key = null;
 

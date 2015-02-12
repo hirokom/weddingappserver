@@ -14,6 +14,9 @@ import lombok.Setter;
 public class EmbeddableParticipantKey implements Serializable
 {
 
+	/**
+	 * コンストラクター
+	 */
 	public EmbeddableParticipantKey()
 	{
 	}
