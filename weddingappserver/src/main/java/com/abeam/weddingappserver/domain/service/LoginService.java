@@ -1,18 +1,32 @@
 package com.abeam.weddingappserver.domain.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.abeam.weddingappserver.domain.model.WeddingInfo;
+import com.abeam.weddingappserver.web.form.WeddingForm;
 
 
 @Service
 public class LoginService
 {
-	public WeddingInfo getBaseInfo(final String id)
+
+	@Autowired
+	UserRepository UserRepository
+
+	public String loginCheck(final String useid, final String password)
 	{
-		final WeddingInfo weddingInfo = new WeddingInfo();
-		weddingInfo.setHusband("渡邉　康司");
-		weddingInfo.setWife("渡邉　康子");
-		return weddingInfo;
+
+		final String weddingId = null;
+		return weddingId;
+
 	}
+
+	public WeddingForm getweddingForm(final String weddingid)
+	{
+
+		final WeddingForm weddingForm = new WeddingForm();
+		return weddingForm;
+
+	}
+
 }

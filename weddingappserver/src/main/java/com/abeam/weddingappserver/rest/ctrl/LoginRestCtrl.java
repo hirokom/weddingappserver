@@ -8,12 +8,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.abeam.weddingappserver.domain.model.WeddingInfo;
 import com.abeam.weddingappserver.domain.service.LoginService;
 
 
 @RestController
 @RequestMapping(value = "/rest")
+
+
 public class LoginRestCtrl
 {
 	@Autowired
@@ -21,11 +22,15 @@ public class LoginRestCtrl
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST, headers = "Accept=application/json", produces = "application/json")
 	@ResponseStatus(HttpStatus.OK)
-	public WeddingInfo login(@RequestParam(value = "userId") final String userId)
+	public String login(@RequestParam(value = "userId") final String useId, final String password)
 	{
-		final WeddingInfo weddingInfo = loginService.getBaseInfo(userId);
+		final String weddingId= loginService.loginCheck(useId, password);
 
-		return weddingInfo;
+		return weddingId;
 	}
 
+
 }
+
+
+

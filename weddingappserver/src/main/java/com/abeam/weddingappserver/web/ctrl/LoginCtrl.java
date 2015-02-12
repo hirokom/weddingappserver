@@ -29,11 +29,16 @@ public class LoginCtrl
 	}
 
 	@RequestMapping(value = "/login", params = "_login", method = RequestMethod.POST)
-	public String search(@ModelAttribute("weddingForm") final WeddingForm form)
+	public String search(@ModelAttribute("weddingForm") WeddingForm form)
 	{
-		final WeddingInfo weddingInfo = loginService.getBaseInfo(form.getUserId());
-		form.setWeddingInfo(weddingInfo);
+		final WeddingInfo weddingInfo = loginService.getBaseInfo(form.getUseid());
+		form.setHallInfo (weddingInfo);
 		return "Top";
+
+
+
+
 	}
+
 
 }
