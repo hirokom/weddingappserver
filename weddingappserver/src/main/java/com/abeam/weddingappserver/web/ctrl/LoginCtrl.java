@@ -23,7 +23,7 @@ public class LoginCtrl
 	@RequestMapping(value = "/login", params = "_login", method = RequestMethod.POST)
 	public String search(@ModelAttribute("weddingForm") final WeddingForm form)
 	{
-		final WeddingInfo weddingInfo = loginService.getWeddingInfo(form.getUseId(), form.getPassword());
+		final WeddingInfo weddingInfo = loginService.getWeddingInfo(form.getUserId(), form.getPassword());
 		form.setWeddingInfo(weddingInfo);
 		return "Menu";
 

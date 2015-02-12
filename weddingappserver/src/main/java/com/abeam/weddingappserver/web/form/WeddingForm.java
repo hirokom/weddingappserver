@@ -11,7 +11,7 @@ import com.abeam.weddingappserver.domain.model.WeddingInfo;
 public class WeddingForm
 {
 
-	private String useId = null;
+	private String userId = null;
 	private String password = null;
 	private WeddingInfo weddingInfo = null;
 
