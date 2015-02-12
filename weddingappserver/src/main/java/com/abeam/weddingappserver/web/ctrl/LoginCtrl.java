@@ -21,23 +21,11 @@ public class LoginCtrl
 	@Autowired
 	private LoginService loginService;
 
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String initLogin(final Model model)
-	{
-		model.addAttribute("weddingForm", new WeddingForm());
-		return "Login";
-	}
-
 	@RequestMapping(value = "/login", params = "_login", method = RequestMethod.POST)
 	public String search(@ModelAttribute("weddingForm") WeddingForm form)
 	{
-		final WeddingInfo weddingInfo = loginService.getBaseInfo(form.getUseid());
-		form.setHallInfo (weddingInfo);
-		return "Top";
-
-
-
-
+		final WeddingForm weddingForm = loginService.(form.getUseid(), form.getPassword());
+		return "Menu";
 	}
 
 

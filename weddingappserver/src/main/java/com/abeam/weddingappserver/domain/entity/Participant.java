@@ -14,10 +14,7 @@ public class Participant
 {
 	@Id
 	private String weddingId = null;
-	private String foodMenueId = null;
-	private String hallId = null;
-	private String date = null;
-	private String toTime = null;
-	private String frTime = null;
+	private String seqNo = null;
+	private String participantName = null;
 
 }

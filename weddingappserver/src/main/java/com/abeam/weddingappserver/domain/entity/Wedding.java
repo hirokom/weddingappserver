@@ -14,9 +14,10 @@ public class Wedding
 {
 	@Id
 	private String weddingId = null;
-	private String div = null;
-	private String name = null;
-	private String hobby = null;
-	private String birthday = null;
+	private String foodMenueId = null;
+	private String hallId = null;
+	private String date = null;
+	private String toTime = null;
+	private String frTime = null;
 
 }

@@ -21,7 +21,7 @@ public class LoginService
 
 	}
 
-	public WeddingForm getweddingForm(final String weddingid)
+	public  getweddingForm(final String weddingid)
 	{
 
 		final WeddingForm weddingForm = new WeddingForm();
