@@ -9,7 +9,6 @@ import com.abeam.weddingappserver.domain.entity.Couple;
 import com.abeam.weddingappserver.domain.entity.FoodMenu;
 import com.abeam.weddingappserver.domain.entity.Hall;
 import com.abeam.weddingappserver.domain.entity.Participant;
-import com.abeam.weddingappserver.domain.entity.User;
 import com.abeam.weddingappserver.domain.entity.Wedding;
 
 
@@ -17,7 +16,6 @@ import com.abeam.weddingappserver.domain.entity.Wedding;
 @Setter
 public class WeddingInfo
 {
-	private User user = null;
 	private Couple husbandInfo = null;
 	private Couple wifeInfo = null;
 	private Wedding wedding = null;
