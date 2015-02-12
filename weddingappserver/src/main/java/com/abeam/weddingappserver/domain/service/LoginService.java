@@ -42,19 +42,32 @@ public class LoginService
 	@Autowired
 	ParticipantRepository participantRepository;
 
-	public WeddingInfo getWeddingInfo(final String useid, final String password)
+	public WeddingInfo getWeddingInfo(final String userId, final String password)
 	{
 		final WeddingInfo weddingInfo = new WeddingInfo();
 
-		User user = userRepository.findByUserAndId(useid, password);
+		final User user = userRepository.findByUserIdAndPassword(userId, password);
 
-		List<Couple> coupleList = coupleRepository.findByWeddingId(user.getWeddingId());
-		Wedding wedding = weddingRepository.findByWeddingId(user.getUserId());
-		Hall hall = hallRepository.findByhallId(wedding.getHallId());
-		FoodMenu foodMenu = foodMenuRepository.findByFoodMenuId(wedding.getFoodMenueId());
-		List<Participant> participantList = participantRepository.findByWeddingId(user.getWeddingId());
+		final List<Couple> coupleList = coupleRepository.findByWeddingId(user.getWeddingId());
+		final Wedding wedding = weddingRepository.findByWeddingId(user.getUserId());
+		final Hall hall = hallRepository.findByhallId(wedding.getHallId());
+		final FoodMenu foodMenu = foodMenuRepository.findByFoodMenuId(wedding.getFoodMenueId());
+		final List<Participant> participantList = participantRepository.findByWeddingId(user.getWeddingId());
 
-		weddingInfo.setCoupleList(coupleList);
+		for (final Couple couple : coupleList)
+		{
+
+			if (couple.getDiv().equals("1"))
+			{
+				weddingInfo.setHusbandInfo(couple);
+			}
+			else if (couple.getDiv().equals("2"))
+			{
+				weddingInfo.setWifeInfo(couple);
+			}
+
+		}
+
 		weddingInfo.setWedding(wedding);
 		weddingInfo.setHall(hall);
 		weddingInfo.setFoodMenu(foodMenu);
@@ -63,7 +76,4 @@ public class LoginService
 		return weddingInfo;
 
 	}
-
 }
-
-

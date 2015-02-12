@@ -18,7 +18,8 @@ import com.abeam.weddingappserver.domain.entity.Wedding;
 public class WeddingInfo
 {
 	private User user = null;
-	private List<Couple> coupleList = null;
+	private Couple husbandInfo = null;
+	private Couple wifeInfo = null;
 	private Wedding wedding = null;
 	private Hall hall = null;
 	private FoodMenu foodMenu = null;
