@@ -32,7 +32,7 @@
 <tr>
 <th>デザート</th>
 <td>デザートの名前</td>
-<td>画像④</td>
+<td>画像</td>
 </tr>
 </tbody>
 </table>
