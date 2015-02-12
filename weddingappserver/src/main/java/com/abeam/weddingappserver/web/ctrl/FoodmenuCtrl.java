@@ -14,16 +14,16 @@ import com.abeam.weddingappserver.web.form.WeddingForm;
 public class FoodmenuCtrl
 {
 
-	@RequestMapping(value = "/menu", params = "_foodmenu", method = RequestMethod.POST)
-	public String foodmenu(@ModelAttribute("weddingForm") final WeddingForm form)
+	@RequestMapping(value = "/foodmenu", method = RequestMethod.GET)
+	public String foodmenu()
 	{
 		return "Foodmenu";
 	}
 
 	@RequestMapping(value = "/foodmenu", params = "_back", method = RequestMethod.POST)
-	public String back(@ModelAttribute("weddingForm") final WeddingForm form)
+	public String back()
 	{
-		return "Menu";
+		return "redirect:/menu";
 	}
 
 }

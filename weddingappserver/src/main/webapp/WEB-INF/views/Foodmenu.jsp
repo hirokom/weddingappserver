@@ -13,13 +13,13 @@
 <h1><spring:message code="food.title" /></h1>
 <form:form modelAttribute="weddingForm" method="POST">
 
-	<Div Align="left"><BUTTON type="button" name="_back">戻る</BUTTON></Div>
+	<Div Align="left"><BUTTON type="submit" name="_back">戻る</BUTTON></Div>
 	<table border="5px" style="width: 481px; ">
 	<tbody>
 	<tr>
 	<th>前菜</th>
 	<td><spring:bind path="weddingInfo.FoodMenu.appetizer">${status.value}</spring:bind></td>
-	<td>画像①</td>
+	<td><img src="/weddingappserver/src/main/webapp/img/KOMA.jpeg"></td>
 	</tr>
 	<tr>
 	<th>スープ</th>

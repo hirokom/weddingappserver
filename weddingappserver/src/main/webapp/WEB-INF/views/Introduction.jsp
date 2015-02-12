@@ -6,13 +6,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title><spring:message code="introduction.title" /></title>
 </head>
 <body>
 
 <center>
-<h1><spring:message code="food.title" /></h1>
-<Div Align="left"><BUTTON type="button"name="back">戻る</BUTTON></Div>
+<h1><spring:message code="introduction.title" /></h1>
+<Div Align="left"><BUTTON type="submit"name="_back">戻る</BUTTON></Div>
 <form:form modelAttribute="weddingForm" method="POST">
 <table border="5px">
 <tbody>
