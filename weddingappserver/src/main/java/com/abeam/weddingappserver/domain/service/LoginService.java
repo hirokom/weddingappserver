@@ -51,7 +51,7 @@ public class LoginService
 		final List<Couple> coupleList = coupleRepository.findByWeddingId(user.getWeddingId());
 		final Wedding wedding = weddingRepository.findByWeddingId(user.getUserId());
 		final Hall hall = hallRepository.findByhallId(wedding.getHallId());
-		final FoodMenu foodMenu = foodMenuRepository.findByFoodMenuId(wedding.getFoodMenueId());
+		final FoodMenu foodMenu = foodMenuRepository.findByFoodMenuId(wedding.getFoodMenuId());
 		final List<Participant> participantList = participantRepository.findByWeddingId(user.getWeddingId());
 
 		for (final Couple couple : coupleList)

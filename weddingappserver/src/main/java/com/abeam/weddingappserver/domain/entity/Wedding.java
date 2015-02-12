@@ -1,5 +1,9 @@
 package com.abeam.weddingappserver.domain.entity;
 
+import java.io.Serializable;
+import java.sql.Date;
+import java.sql.Time;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -10,14 +14,14 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Wedding
+public class Wedding implements Serializable
 {
 	@Id
 	private String weddingId = null;
-	private String foodMenueId = null;
+	private String foodMenuId = null;
 	private String hallId = null;
-	private String date = null;
-	private String toTime = null;
-	private String frTime = null;
+	private Date date = null;
+	private Time toTime = null;
+	private Time frTime = null;
 
 }

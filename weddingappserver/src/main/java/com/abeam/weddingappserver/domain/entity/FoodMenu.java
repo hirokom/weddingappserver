@@ -1,5 +1,7 @@
 package com.abeam.weddingappserver.domain.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -10,7 +12,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class FoodMenu
+public class FoodMenu implements Serializable
 {
 	@Id
 	private String foodMenuId = null;

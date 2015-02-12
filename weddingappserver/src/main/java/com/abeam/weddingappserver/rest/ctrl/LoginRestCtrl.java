@@ -14,8 +14,6 @@ import com.abeam.weddingappserver.domain.service.LoginService;
 
 @RestController
 @RequestMapping(value = "/rest")
-
-
 public class LoginRestCtrl
 {
 	@Autowired
@@ -23,15 +21,13 @@ public class LoginRestCtrl
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST, headers = "Accept=application/json", produces = "application/json")
 	@ResponseStatus(HttpStatus.OK)
-	public WeddingInfo weddingInfo(@RequestParam(value = "userId") final String useId, final String password)
+	public WeddingInfo weddingInfo(@RequestParam(value = "userId") final String useId,
+			@RequestParam(value = "password") final String password)
 	{
-		final WeddingInfo weddingInfo= loginService.getWeddingInfo(useId, password);
+		final WeddingInfo weddingInfo = loginService.getWeddingInfo(useId, password);
 
 		return weddingInfo;
 	}
 
 
 }
-
-
-
