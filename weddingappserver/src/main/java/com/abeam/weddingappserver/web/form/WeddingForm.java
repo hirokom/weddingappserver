@@ -5,12 +5,13 @@ import lombok.Setter;
 
 import com.abeam.weddingappserver.domain.model.WeddingInfo;
 
+
 @Getter
 @Setter
 public class WeddingForm
 {
 
-	private String useid = null;
+	private String userId = null;
 	private String password = null;
 	private WeddingInfo weddingInfo = null;
 

@@ -21,9 +21,9 @@ public class LoginCtrl
 	private LoginService loginService;
 
 	@RequestMapping(value = "/login", params = "_login", method = RequestMethod.POST)
-	public String search(@ModelAttribute("weddingForm") WeddingForm form)
+	public String search(@ModelAttribute("weddingForm") final WeddingForm form)
 	{
-		final WeddingInfo weddingInfo = loginService.getWeddingInfo(form.getUseid(), form.getPassword());
+		final WeddingInfo weddingInfo = loginService.getWeddingInfo(form.getUserId(), form.getPassword());
 		form.setWeddingInfo(weddingInfo);
 		return "Menu";
 
