@@ -14,12 +14,6 @@ import com.abeam.weddingappserver.web.form.WeddingForm;
 public class MenuCtrl
 {
 
-	@RequestMapping(value = "/login", params = "_login", method = RequestMethod.POST)
-	public String menu(@ModelAttribute("weddingForm") final WeddingForm form)
-	{
-		return "Menu";
-	}
-
 	@RequestMapping(value = "/menu", params = "_participate", method = RequestMethod.POST)
 	public String participat(@ModelAttribute("weddingForm") final WeddingForm form)
 	{
