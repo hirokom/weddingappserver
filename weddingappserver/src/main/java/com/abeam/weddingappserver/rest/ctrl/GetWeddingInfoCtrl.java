@@ -9,28 +9,29 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.abeam.weddingappserver.domain.service.LoginService;
+import com.abeam.weddingappserver.web.form.WeddingForm;
 
 
 @RestController
 @RequestMapping(value = "/rest")
 
 
-public class LoginRestCtrl
+
+public class GetWeddingInfoCtrl
 {
 	@Autowired
 	private LoginService loginService;
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST, headers = "Accept=application/json", produces = "application/json")
 	@ResponseStatus(HttpStatus.OK)
-	public String login(@RequestParam(value = "userId") final String useId, final String password)
+	public WeddingForm login(@RequestParam(value = "userId") final String weddingId)
 	{
-		final String weddingId= loginService.loginCheck(useId, password);
+		final WeddingForm weddingForm = loginService.getweddingForm(weddingId);
 
-		return weddingId;
+		return weddingForm;
 	}
 
 
 }
-
 
 
