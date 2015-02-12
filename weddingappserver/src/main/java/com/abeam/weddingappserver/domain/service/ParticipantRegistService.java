@@ -29,7 +29,7 @@ public class ParticipantRegistService
 		{
 			participantTmp = participantList.get(i);
 
-			if ( participantName.equals(participant.getParticipantName()))
+			if ( participantName.equals(participantTmp.getParticipantName()))
 			{
 				exist = true;
 			}
