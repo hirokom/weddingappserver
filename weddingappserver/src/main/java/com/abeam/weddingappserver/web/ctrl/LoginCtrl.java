@@ -2,7 +2,6 @@ package com.abeam.weddingappserver.web.ctrl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,8 +23,10 @@ public class LoginCtrl
 	@RequestMapping(value = "/login", params = "_login", method = RequestMethod.POST)
 	public String search(@ModelAttribute("weddingForm") WeddingForm form)
 	{
-		final WeddingForm weddingForm = loginService.(form.getUseid(), form.getPassword());
+		final WeddingInfo weddingInfo = loginService.getWeddingInfo(form.getUseid(), form.getPassword());
+		form.setWeddingInfo(weddingInfo);
 		return "Menu";
+
 	}
 
 
