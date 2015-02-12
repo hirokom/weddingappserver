@@ -14,13 +14,13 @@
 		<table>
 			<tr>
 				<td>
-					<spring:bind path="weddingInfo.Husbandinfo.name">${status.value}</spring:bind>
+					<spring:bind path="weddingInfo.husbandInfo.name">${status.value}</spring:bind>
 					<spring:message code="common.title" />
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<spring:bind path="weddingInfo.Wifeinfo.name">${status.value}</spring:bind>
+					<spring:bind path="weddingInfo.wifeInfo.name">${status.value}</spring:bind>
 					<spring:message code="common.title" />
 				</td>
 			</tr>
