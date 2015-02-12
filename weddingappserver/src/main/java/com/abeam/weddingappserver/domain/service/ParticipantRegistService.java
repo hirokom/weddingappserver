@@ -35,7 +35,7 @@ public class ParticipantRegistService
 			}
 		}
 
-//		参加者の登録
+//		登録：新規参加者
 		if ( exist = false)
 		{
 			participant.setWeddingId(weddingId);
@@ -46,7 +46,7 @@ public class ParticipantRegistService
 
 		}
 
-//		参加者情報の再取得
+//		再取得：参加者情報
 		participantList = participantRepository.findByWeddingId(weddingId);
 		return participantList;
 
