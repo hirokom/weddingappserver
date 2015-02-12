@@ -23,6 +23,6 @@ public interface ParticipantRepository extends JpaRepository<Participant, ID>
 	 * @param weddingId
 	 * @return
 	 */
-	public List<Participant> findByKeyWeddingIdOrderByKeySeqNoAsc(final String weddingId);
+	public List<Participant> findByKeyWeddingIdOrderByKeySeqNoDesc(final String weddingId);
 
 }

@@ -22,8 +22,8 @@ public class ParticipantRegistService
 		//		取得：連番(最大値)
 		Participant participant = new Participant();
 		Participant participantTmp = new Participant();
-		List<Participant> participantList = participantRepository.findByKeyWeddingIdOrderByKeySeqNoAsc(weddingId);
-		participant = participantList.get(1);
+		List<Participant> participantList = participantRepository.findByKeyWeddingIdOrderByKeySeqNoDesc(weddingId);
+		participant = participantList.get(0);
 
 		//		チェック：同一人物の登録状況
 		Boolean exist = false;
