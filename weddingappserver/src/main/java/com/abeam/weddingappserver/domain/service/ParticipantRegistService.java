@@ -5,8 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.abeam.weddingappserver.domain.entity.EmbeddableParticipantKey;
 import com.abeam.weddingappserver.domain.entity.Participant;
 import com.abeam.weddingappserver.domain.repository.ParticipantRepository;
+
 
 @Service
 public class ParticipantRegistService
@@ -14,43 +16,42 @@ public class ParticipantRegistService
 	@Autowired
 	ParticipantRepository participantRepository;
 
-	public List<Participant> registParticipant(String weddingId,String participantName)
+	public List<Participant> registParticipant(final String weddingId, final String participantName)
 	{
 
-//		取得：連番(最大値)
-		Participant participant    = new Participant();
+		//		取得：連番(最大値)
+		Participant participant = new Participant();
 		Participant participantTmp = new Participant();
-		List<Participant> participantList = participantRepository.findByWeddingIdOrderBySeqNoAsc(weddingId);
+		List<Participant> participantList = participantRepository.findByKeyWeddingIdOrderByKeySeqNoAsc(weddingId);
 		participant = participantList.get(1);
 
-//		チェック：同一人物の登録状況
+		//		チェック：同一人物の登録状況
 		Boolean exist = false;
-		for ( int i = 0; i < participantList.size(); ++i )
+		for (int i = 0; i < participantList.size(); ++i)
 		{
 			participantTmp = participantList.get(i);
 
-			if ( participantName.equals(participantTmp.getParticipantName()))
+			if (participantName.equals(participantTmp.getParticipantName()))
 			{
 				exist = true;
 			}
 		}
 
-//		登録：新規参加者
-		if ( !exist )
+		//		登録：新規参加者
+		if (!exist)
 		{
-			participant.setWeddingId(weddingId);
-			participant.setSeqNo(participant.getSeqNo()+1);
+			final EmbeddableParticipantKey key = new EmbeddableParticipantKey(weddingId, participant.getKey().getSeqNo() + 1);
+			participant.setKey(key);
 			participant.setParticipantName(participantName);
 
 			participantRepository.save(participant);
-//			participantRepository.saveAndFlush(participant);
+			//			participantRepository.saveAndFlush(participant);
 
 		}
 
-//		再取得：参加者情報
-		participantList = participantRepository.findByWeddingId(weddingId);
+		//		再取得：参加者情報
+		participantList = participantRepository.findByKeyWeddingId(weddingId);
 		return participantList;
 
 	}
 }
-
