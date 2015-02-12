@@ -13,23 +13,28 @@ import com.abeam.weddingappserver.web.form.WeddingForm;
 @SessionAttributes("weddingForm")
 public class MenuCtrl
 {
+	@RequestMapping(value = "/menu", method = RequestMethod.GET)
+	public String Menu()
+	{
+		return "Menu";
+	}
 
 	@RequestMapping(value = "/menu", params = "_participate", method = RequestMethod.POST)
 	public String participat(@ModelAttribute("weddingForm") final WeddingForm form)
 	{
-		return "Participate";
+		return "redirect:/participate";
 	}
 
 	@RequestMapping(value = "/menu", params = "_foodmenu", method = RequestMethod.POST)
 	public String foodmenu(@ModelAttribute("weddingForm") final WeddingForm form)
 	{
-		return "foodmenu";
+		return "redirect:/foodmenu";
 	}
 
 	@RequestMapping(value = "/menu", params = "_introduction", method = RequestMethod.POST)
 	public String introduction(@ModelAttribute("weddingForm") final WeddingForm form)
 	{
-		return "introduction";
+		return "redirect:/introduction";
 	}
 
 	@RequestMapping(value = "/menu", params = "_hall", method = RequestMethod.POST)
