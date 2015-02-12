@@ -14,13 +14,13 @@ public class ParticipantRegistService
 	@Autowired
 	ParticipantRepository participantRepository;
 
-	public List<Participant> registParicipant(String weddingId,String participantName)
+	public List<Participant> registParticipant(String weddingId,String participantName)
 	{
 
 //		取得：連番(最大値)
 		Participant participant    = new Participant();
 		Participant participantTmp = new Participant();
-		List<Participant> participantList = participantRepository.findByWeddingIdOrderByseqNoDesc(weddingId);
+		List<Participant> participantList = participantRepository.findByWeddingIdOrderBySeqNoDesc(weddingId);
 		participant = participantList.get(1);
 
 //		チェック：同一人物の登録状況
