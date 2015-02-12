@@ -25,7 +25,7 @@ public class LoginCtrl
 	{
 		final WeddingInfo weddingInfo = loginService.getWeddingInfo(form.getUserId(), form.getPassword());
 		form.setWeddingInfo(weddingInfo);
-		return "Menu";
+		return "redirect:/menu";
 
 	}
 
