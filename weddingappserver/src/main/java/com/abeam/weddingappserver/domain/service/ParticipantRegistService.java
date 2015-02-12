@@ -20,7 +20,7 @@ public class ParticipantRegistService
 //		取得：連番(最大値)
 		Participant participant    = new Participant();
 		Participant participantTmp = new Participant();
-		List<Participant> participantList = participantRepository.findByWeddingIdOrderBySeqNoDesc(weddingId);
+		List<Participant> participantList = participantRepository.findByWeddingIdOrderBySeqNoAsc(weddingId);
 		participant = participantList.get(1);
 
 //		チェック：同一人物の登録状況
@@ -36,13 +36,14 @@ public class ParticipantRegistService
 		}
 
 //		登録：新規参加者
-		if ( exist = false)
+		if ( !exist )
 		{
 			participant.setWeddingId(weddingId);
 			participant.setSeqNo(participant.getSeqNo()+1);
 			participant.setParticipantName(participantName);
 
 			participantRepository.save(participant);
+//			participantRepository.saveAndFlush(participant);
 
 		}
 
