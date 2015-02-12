@@ -12,7 +12,8 @@
 
 <center>
 <h1><spring:message code="food.title" /></h1>
-<Div Align="left"><BUTTON type="button">戻る</BUTTON></Div>
+<Div Align="left"><BUTTON type="button"name="back">戻る</BUTTON></Div>
+<form:form modelAttribute="weddingForm" method="POST">
 <table border="5px">
 <tbody>
 <tr>
@@ -21,22 +22,23 @@
 <td>妻の画像</td>
 </tr>
 <tr>
-<th>旦那名前</th>
+<th><spring:bind path="weddingInfo.husbandInfo.name">${status.value}</spring:bind></th>
 <td><center>名前</center></td>
-<td>妻名前</td>
+<td><spring:bind path="weddingInfo.wifeInfo.name">${status.value}</spring:bind></td>
 </tr>
 <tr>
-<th>旦那生年月日</th>
+<th><spring:bind path="weddingInfo.husbandInfo.birthday">${status.value}</spring:bind></th>
 <td><center>生年年月日</center></td>
-<td>妻生年月日</td>
+<td><spring:bind path="weddingInfo.wifeInfo.birthday">${status.value}</spring:bind></td>
 </tr>
 <tr>
-<th>旦那趣味</th>
+<th><spring:bind path="weddingInfo.husbandInfo.hobby">${status.value}</spring:bind></th>
 <td><center>趣味</center></td>
-<td>妻趣味</td>
+<td><spring:bind path="weddingInfo.wifeInfo.hobby">${status.value}</spring:bind></td>
 </tr>
 </tbody>
 </table>
+</form:form>
 </center>
 </body>
 </html>

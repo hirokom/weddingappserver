@@ -11,31 +11,34 @@
 <body>
 <center>
 <h1><spring:message code="food.title" /></h1>
-<Div Align="left"><BUTTON type="button">戻る</BUTTON></Div>
-<table border="5px" style="width: 481px; ">
-<tbody>
-<tr>
-<th>前菜</th>
-<td>前菜の名前</td>
-<td>画像①</td>
-</tr>
-<tr>
-<th>スープ</th>
-<td>スープの名前</td>
-<td>画像②</td>
-</tr>
-<tr>
-<th>メインディッシュ</th>
-<td>メインディッシュの名前</td>
-<td>画像③</td>
-</tr>
-<tr>
-<th>デザート</th>
-<td>デザートの名前</td>
-<td>画像</td>
-</tr>
-</tbody>
-</table>
-</center>
+<form:form modelAttribute="weddingForm" method="POST">
+
+	<Div Align="left"><BUTTON type="button" name="_back">戻る</BUTTON></Div>
+	<table border="5px" style="width: 481px; ">
+	<tbody>
+	<tr>
+	<th>前菜</th>
+	<td><spring:bind path="weddingInfo.FoodMenu.appetizer">${status.value}</spring:bind></td>
+	<td>画像①</td>
+	</tr>
+	<tr>
+	<th>スープ</th>
+	<td><spring:bind path="weddingInfo.FoodMenu.soup">${status.value}</spring:bind></td>
+	<td>画像②</td>
+	</tr>
+	<tr>
+	<th>メインディッシュ</th>
+	<td><spring:bind path="weddingInfo.FoodMenu.maindish">${status.value}</spring:bind></td>
+	<td>画像③</td>
+	</tr>
+	<tr>
+	<th>デザート</th>
+	<td><spring:bind path="weddingInfo.FoodMenu.dessert">${status.value}</spring:bind></td>
+	<td>画像④</td>
+	</tr>
+	</tbody>
+	</table>
+	</form:form>	
+	</center>
 </body>
 </html>
